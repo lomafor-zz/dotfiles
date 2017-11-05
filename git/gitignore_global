@@ -1,1 +1,5 @@
-/Users/jun/Downloads/Dropbox/AppData/.gitignore_global
+.DS_Store
+.idea/
+*.pyc
+tmp/**/*
+log/*.log

@@ -1,1 +1,25 @@
-/Users/jun/Downloads/Dropbox/AppData/.gitconfig
+[user]
+	name = Jun Chen
+	email = lomafor@gmail.com
+
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+
+[core]
+    autocrlf = false
+	excludesfile = ~/.gitignore_global
+
+[alias]
+	co = checkout
+	ci = commit
+	cia = commit -a --no-edit
+	ciam = commit -a -m
+	cim = commit -m
+	st = status
+	br = branch
+	rb = rebase
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	tree = log --oneline --decorate --all --graph

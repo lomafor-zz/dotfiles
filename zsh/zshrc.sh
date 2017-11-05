@@ -1,19 +1,47 @@
-#########
-# LOCAL #
-#########
+# Oh-My-Zsh {{{
 
-export DROPBOX_PATH=$HOME/Downloads/Dropbox
-export WORKSPACE_PATH=$HOME/workspace
-export GOPATH=$WORKSPACE_PATH/go
-export MY_BIN=$HOME/.bin
-export PATH=$MY_BIN:$PATH 
+DEFAULT_USER=`whoami`                    # hide user in user@hostname
+ZSH_THEME="dracula"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_AUTO_UPDATE="true"
+plugins=(git brew osx)
+export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
-alias a-ssh-base='ssh root@dragonbase'
-alias a-ssh-base-main='ssh root@dragonbase_main'
-alias cfg='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# }}}
+# Zsh {{{
 
-##########
-# SHARED #
-##########
+CDPATH=$CDPATH:$HOME:$WORKSPACE_PATH
 
-source $DROPBOX_PATH/AppData/zshrc_common
+# }}}
+# Alias {{{
+
+alias v-zshrc="vim ~/.zshrc"
+alias v-vimrc="vim ~/.vimrc"
+alias s-zshrc="source ~/.zshrc"
+alias h='history'
+alias lss='ls -AlhtG'
+
+## Print directories tree
+alias find-dir="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
+
+## Kill all java process 
+alias kill-java='ps -ef | grep java | grep -v grep | grep -v CrashPlanService | awk "{print \$2}" | xargs kill -9 && echo "All Java are dead, for now..."'
+
+## Print java process
+alias ps-java='ps -ef | grep java | grep -v grep | grep -v CrashPlan'
+
+# }}}
+# Functions {{{
+
+# Custom CD
+my_cd() {
+    cd $1;
+    ls;
+}
+alias cd="my_cd"
+# }}}
+
+source ~/.dotfiles/zsh/hotkeys.sh
+# vim:foldmethod=marker:foldlevel=0

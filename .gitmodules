@@ -1,0 +1,24 @@
+[submodule "vim/vim/pack/plugins/start/auto-pairs"]
+	path = vim/vim/pack/plugins/start/auto-pairs
+	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "vim/vim/pack/plugins/start/vim-commentary"]
+	path = vim/vim/pack/plugins/start/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
+[submodule "vim/vim/pack/plugins/start/vim-repeat"]
+	path = vim/vim/pack/plugins/start/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule "vim/vim/pack/plugins/start/vim-sensible"]
+	path = vim/vim/pack/plugins/start/vim-sensible
+	url = git@github.com:tpope/vim-sensible.git
+[submodule "vim/vim/pack/plugins/start/vim-sneak"]
+	path = vim/vim/pack/plugins/start/vim-sneak
+	url = git@github.com:justinmk/vim-sneak.git
+[submodule "vim/vim/pack/plugins/start/vim-surround"]
+	path = vim/vim/pack/plugins/start/vim-surround
+	url = git@github.com:tpope/vim-surround.git
+[submodule "vim/vim/pack/plugins/start/nerdtree"]
+	path = vim/vim/pack/plugins/start/nerdtree
+	url = git@github.com:scrooloose/nerdtree.git
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = git://github.com/robbyrussell/oh-my-zsh.git

@@ -1,7 +1,13 @@
 " Misc {{{
 
-set modelines=1            " last line
-set encoding=utf-8
+set modelines=1            " the last line for set comment
+set encoding=utf-8         " default text encoding
+set laststatus=2           " always on status line
+
+" lightline.vim
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " }}}
 " Enhancement {{{
@@ -15,6 +21,7 @@ set path+=**                    " enable fuzzy search subdirectories
 
 color dracula
 set background=dark
+set noshowmode
 set number                 " show line numbers
 set relativenumber         " show relative line number
 set showcmd                " show command in bottom bar

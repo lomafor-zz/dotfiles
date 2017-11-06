@@ -1,10 +1,10 @@
 # Oh-My-Zsh {{{
 
-ZSH_THEME="dracula"
+ZSH_THEME="dracula"                      # theme
 DEFAULT_USER=`whoami`                    # hide user in user@hostname
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"               # disable auto update
 
 plugins=(git brew osx python vi-mode sudo pip gradle history tmux)
 
@@ -12,9 +12,11 @@ export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # }}}
-# Zsh {{{
+# General {{{
 
-CDPATH=$CDPATH:$HOME:$WORKSPACE_PATH
+export CDPATH=$CDPATH:$HOME:$WORKSPACE_PATH
+
+# History
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.

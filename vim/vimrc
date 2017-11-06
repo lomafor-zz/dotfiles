@@ -13,14 +13,16 @@ set path+=**                    " enable fuzzy search subdirectories
 " }}}
 " Visual {{{
 
-set background=dark
 color dracula
+set background=dark
 set number                 " show line numbers
+set relativenumber         " show relative line number
 set showcmd                " show command in bottom bar
 set wildmenu               " visual autocomplete for command menu
 set showmatch              " highlight matching [{()}]
 set incsearch              " search as characters are entered
 set hlsearch               " highlight matches
+set cursorline             " highlight cursor line
 filetype on                " enable file type detection
 filetype indent on         " load filetype-specific indent files
 syntax enable              " enable syntax highlighting
@@ -58,7 +60,7 @@ let mapleader=","
 nnoremap <leader>r :%s///g<left><left>
 
 " Clear search highlight
-nnoremap <leader><space> :nohlsearch<CR> 
+nnoremap <leader><space> :nohlsearch<CR>:echo "Search cleared"<CR>
 
 " Fold/unfold
 nnoremap <space> za                      

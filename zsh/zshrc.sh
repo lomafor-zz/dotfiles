@@ -1,11 +1,13 @@
 # Oh-My-Zsh {{{
 
-DEFAULT_USER=`whoami`                    # hide user in user@hostname
 ZSH_THEME="dracula"
+DEFAULT_USER=`whoami`                    # hide user in user@hostname
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 DISABLE_AUTO_UPDATE="true"
-plugins=(git brew osx)
+
+plugins=(git brew osx python vi-mode sudo pip gradle history tmux)
+
 export ZSH=$HOME/.dotfiles/zsh/oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
@@ -13,6 +15,10 @@ source $ZSH/oh-my-zsh.sh
 # Zsh {{{
 
 CDPATH=$CDPATH:$HOME:$WORKSPACE_PATH
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
+setopt HIST_SAVE_NO_DUPS         # Don't write duplicate entries in the history file.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
 
 # }}}
 # Alias {{{
@@ -20,8 +26,8 @@ CDPATH=$CDPATH:$HOME:$WORKSPACE_PATH
 alias v-zshrc="vim ~/.zshrc"
 alias v-vimrc="vim ~/.vimrc"
 alias s-zshrc="source ~/.zshrc"
-alias h='history'
 alias lss='ls -AlhtG'
+alias v='vim -p'
 
 ## Print directories tree
 alias find-dir="find ./ -type d | sed -e 's/[^-][^\/]*\//--/g;s/--/ |-/'"
@@ -36,12 +42,17 @@ alias ps-java='ps -ef | grep java | grep -v grep | grep -v CrashPlan'
 # Functions {{{
 
 # Custom CD
-my_cd() {
+c() {
     cd $1;
     ls;
 }
-alias cd="my_cd"
+
 # }}}
+# Imports {{{
 
 source ~/.dotfiles/zsh/hotkeys.sh
+source ~/.dotfiles/zsh/oh-my-zsh/lib/history.zsh
+
+# }}}
+
 # vim:foldmethod=marker:foldlevel=0

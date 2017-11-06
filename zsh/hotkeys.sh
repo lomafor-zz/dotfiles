@@ -23,10 +23,3 @@ function list_d() {
 zle -N list_d
 bindkey "^l" list_d
 
-# add 'sudo'
-function add_sudo() {
-    BUFFER="sudo "$BUFFER
-    zle end-of-line
-}
-zle -N add_sudo
-bindkey "^s" add_sudo

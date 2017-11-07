@@ -53,7 +53,7 @@ c() {
 # Imports {{{
 
 source ~/.dotfiles/zsh/hotkeys.sh
-source ~/.dotfiles/zsh/oh-my-zsh/lib/history.zsh
+source ~/.dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # }}}
 

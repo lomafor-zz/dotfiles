@@ -3,6 +3,11 @@
 set modelines=1            " the last line for set comment
 set encoding=utf-8         " default text encoding
 set laststatus=2           " always on status line
+set nobackup               " turn off backup
+set nowritebackup          " only in case you don't want a backup file while editing
+set noswapfile             " no swap files
+set backupdir=/private/tmp " move backup dir
+set dir=/private/tmp       " move swap file dir
 
 " lightline.vim
 let g:lightline = {
@@ -36,9 +41,15 @@ syntax enable              " enable syntax highlighting
 let python_highlight_all=1 " enable all Python syntax highlighting features
 
 " change cursor for different mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " }}}
 " Tab {{{
@@ -84,6 +95,11 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
+
+" Save
+nmap <c-s> :w<CR>
+vmap <c-s> <Esc><c-s>gv
+imap <c-s> <Esc><c-s>
 
 " }}}
 " Snippets {{{

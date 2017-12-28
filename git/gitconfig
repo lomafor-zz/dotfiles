@@ -13,8 +13,8 @@
 [alias]
 	co = checkout
 	ci = commit
-	cia = commit -a --no-edit
-	ciam = commit -a -m
+	cia = commit --amend --no-edit
+	ciam = commit --amend -m
 	cim = commit -m
 	st = status
 	br = branch

@@ -15,8 +15,9 @@ source $ZSH/oh-my-zsh.sh
 # General {{{
 
 export WORKSPACE_PATH=$HOME/workspace
+export GDRIVE_PATH=$HOME/Downloads/GDrive
 export GOPATH=$WORKSPACE_PATH/go
-export CDPATH=$CDPATH:$HOME:$WORKSPACE_PATH
+export CDPATH=$CDPATH:$HOME:$WORKSPACE_PATH:$GDRIVE_PATH
 
 # History
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.

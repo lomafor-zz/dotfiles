@@ -8,11 +8,7 @@ set nowritebackup          " only in case you don't want a backup file while edi
 set noswapfile             " no swap files
 set backupdir=/private/tmp " move backup dir
 set dir=/private/tmp       " move swap file dir
-
-" lightline.vim
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+set wildignore+=*/tmp/*,*/build/*,*.swp,*.zip
 
 " }}}
 " Enhancement {{{
@@ -39,6 +35,7 @@ filetype on                " enable file type detection
 filetype indent on         " load filetype-specific indent files
 syntax enable              " enable syntax highlighting
 let python_highlight_all=1 " enable all Python syntax highlighting features
+set guioptions=
 
 " change cursor for different mode
 if exists('$TMUX')
@@ -71,8 +68,8 @@ set foldmethod=indent      " fold based on indent level
 " }}}
 " Key Mapping {{{
 
-" Toggle paste mode
-set pastetoggle=<F2>
+set pastetoggle=<F2>            " Toggle paste mode
+nnoremap <F3> :set invnumber invrelativenumber<CR>
 
 " Change leader key
 let mapleader=","       
@@ -113,8 +110,10 @@ nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap ,html :-1read $HOME/.vim/snippets/_skeleton.html<CR>3jwf>a
 
 " }}}
-" NERDTree {{{
+" Plugins {{{
 
+" NERDTree
+"
 " Ignore files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$'] 
 " Toggle 
@@ -124,6 +123,25 @@ nnoremap <silent> <leader>f :NERDTreeFind<CR>
 " Auto quit vim when NERDTree is the only buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" }}}
+" lightline.vim
+"
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
+" ctrlp
+"
+" Limit index to current 'pwd' only
+let g:ctrlp_working_path_mode = ''
+" Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" Custom ignore
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+" }}}
 " vim:foldmethod=marker:foldlevel=0

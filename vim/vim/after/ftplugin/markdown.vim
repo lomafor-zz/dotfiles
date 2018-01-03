@@ -1,3 +1,8 @@
+" Folding for Markdown headers, both styles (atx- and setext-)
+" http://daringfireball.net/projects/markdown/syntax#header
+"
+" In Markdown, setext-style overrides atx-style, so we first check for an
+" underline. Empty lines should be ignored when underlined.
 func! Foldexpr_markdown(lnum)
     let l1 = getline(a:lnum)
     if l1 =~ '^\s*$'
@@ -18,3 +23,4 @@ endfunc
 setlocal foldexpr=Foldexpr_markdown(v:lnum)
 setlocal foldmethod=expr
 setlocal foldlevel=0
+setlocal foldcolumn=0

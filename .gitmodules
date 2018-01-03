@@ -34,3 +34,6 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "vim/vim/pack/plugins/start/ctrlp.vim"]
+	path = vim/vim/pack/plugins/start/ctrlp.vim
+	url = git@github.com:ctrlpvim/ctrlp.vim.git

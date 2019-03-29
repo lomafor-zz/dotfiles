@@ -8,7 +8,9 @@ set nowritebackup          " only in case you don't want a backup file while edi
 set noswapfile             " no swap files
 set backupdir=/private/tmp " move backup dir
 set dir=/private/tmp       " move swap file dir
-set wildignore+=*/tmp/*,*/build/*,*.swp,*.zip
+set wildignore+=*/tmp/*,*/build/*,*.swp,*.zip  " ignore certain files
+set autoread               " auto update changed
+set autowrite              " auto write changes
 
 " }}}
 " Enhancement {{{
@@ -61,15 +63,17 @@ set shiftwidth=4           " when using the >> or << commands, shift lines by 4 
 " Folding {{{
 
 set foldenable             " enable folding
-set foldlevelstart=10      " open most folds by default
-set foldnestmax=10         " 10 nested fold max
+set foldlevelstart=2       " open most folds by default
+set foldnestmax=5         " 10 nested fold max
 set foldmethod=indent      " fold based on indent level
 
 " }}}
 " Key Mapping {{{
-
-set pastetoggle=<F2>            " Toggle paste mode
+"
+" Toggle paste mode
+set pastetoggle=<F2>
 nnoremap <F3> :set invnumber invrelativenumber<CR>
+nnoremap <F4> :reg<CR>
 
 " Change leader key
 let mapleader=","       

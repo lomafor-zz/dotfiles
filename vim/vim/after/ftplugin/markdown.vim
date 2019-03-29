@@ -22,5 +22,4 @@ endfunc
 
 setlocal foldexpr=Foldexpr_markdown(v:lnum)
 setlocal foldmethod=expr
-setlocal foldlevel=0
 setlocal foldcolumn=0

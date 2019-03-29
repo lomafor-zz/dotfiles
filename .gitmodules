@@ -37,3 +37,6 @@
 [submodule "vim/vim/pack/plugins/start/ctrlp.vim"]
 	path = vim/vim/pack/plugins/start/ctrlp.vim
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
+[submodule "vim/vim/pack/plugins/start/kotlin-vim"]
+	path = vim/vim/pack/plugins/start/kotlin-vim
+	url = git@github.com:udalov/kotlin-vim.git
